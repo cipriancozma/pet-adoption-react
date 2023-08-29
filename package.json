@@ -1,0 +1,26 @@
+{
+  "name": "pet-adoption-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cipriancozma/pet-adoption-react.git"
+  },
+  "author": "Ciprian Cozma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cipriancozma/pet-adoption-react/issues"
+  },
+  "homepage": "https://github.com/cipriancozma/pet-adoption-react#readme",
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^3.0.3"
+  }
+}
