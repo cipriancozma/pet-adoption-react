@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Pet from "./Pet";
 import useBreedList from "./useBreedList";
+import PetResults from "./PetResults";
 
-const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+const ANIMALS = ["", "bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
   const [location, setLocation] = useState("");
@@ -49,6 +49,7 @@ const SearchParams = () => {
           Animal
           <select
             id="animal"
+            defaultValue={ANIMALS[0]}
             value={animal}
             onChange={(e) => {
               setAnimal(e.target.value);
@@ -80,14 +81,7 @@ const SearchParams = () => {
           Submit
         </button>
       </form>
-      {pets.map((pet) => (
-        <Pet
-          key={pet.id}
-          name={pet.name}
-          animal={pet.animal}
-          breed={pet.breed}
-        />
-      ))}
+      <PetResults pets={pets} />
     </div>
   );
 };
