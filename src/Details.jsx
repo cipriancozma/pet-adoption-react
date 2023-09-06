@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import fetchPets from "./fetchPet";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
@@ -8,6 +8,7 @@ import Modal from "./Modal";
 
 const Details = () => {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
   const { id } = useParams();
   const { isLoading, data, isError } = useQuery(["details", id], fetchPets);
 
@@ -41,7 +42,14 @@ const Details = () => {
             <div>
               <h1>Would you like to adopt this pet? </h1>
               <div className="buttons">
-                <button>Yes</button>
+                <button
+                  onClick={() => {
+                    alert("Pet adopted");
+                    navigate("/");
+                  }}
+                >
+                  Yes
+                </button>
                 <button onClick={() => setShowModal(false)}>No</button>
               </div>
             </div>
